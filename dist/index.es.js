@@ -259,7 +259,9 @@ var Fullpage = (_temp = _class = function (_PureComponent) {
             // update count
             _this3.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             _this3.fullPageHeight = _this3.fullpageRef.current && _this3.fullpageRef.current.clientHeight;
-            _this3.driverRef.current.style.height = String(_this3.fullPageHeight || _this3.viewportHeight) + 'px';
+            if (_this3.driverRef.current) {
+              _this3.driverRef.current.style.height = String(_this3.fullPageHeight || _this3.viewportHeight) + 'px';
+            }
             _this3.ticking = false;
           });
         }
