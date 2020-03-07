@@ -165,8 +165,8 @@ class Fullpage extends PureComponent {
           document.documentElement.clientHeight,
           window.innerHeight || 0,
         );
-        this.fullPageHeight = this.fullpageRef.current.clientHeight;
-        this.driverRef.current.style.height = `${this.fullPageHeight}px`;
+        this.fullPageHeight = this.fullpageRef.current && this.fullpageRef.current.clientHeight;
+        this.driverRef.current.style.height = `${this.fullPageHeight || this.viewportHeight}px`;
         this.ticking = false;
       });
     }
